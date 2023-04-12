@@ -13,6 +13,15 @@
     flex-flow: row wrap;
 }
 
-body {
-  font-family: 'Playfair Display', serif;
+.img-sobre-nosotros {
+    border-radius: 5%;
+}
+
+.textos-galeria {
+  text-align: center;
+}
+
+.texto-cafe-menu {
+  text-align: center;
+  font-size: xx-large;
 }
