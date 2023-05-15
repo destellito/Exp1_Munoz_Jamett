@@ -1,35 +1,61 @@
-.carousel .item {
-    height: 100px;
-  }
-  
-.item img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-height: 300px;
-  }
-#artistas-about {
-    display: flex;
-    flex-flow: row wrap;
+body {
+  background: rgb(248, 249, 250);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.img-sobre-nosotros {
-    border-radius: 5%;
+.carousel-item img {
+  width: 100%;
+  height: auto;
 }
 
-.textos-galeria {
+.carousel-inner {
+  width: 100%;
+  max-width: 100%;
+}
+
+#artistas {
+  top: 25%;
+  left: 30%;
+  padding: 5%;
+}
+
+#artistasFila {
+  position: sticky;
+  transform: translateX(4.5%);
+}
+
+#artistaUno, #artistaDos, #artistaTres {
+
+  vertical-align: top;
   text-align: center;
+
 }
 
-.texto-cafe-menu {
-  text-align: center;
-  font-size: xx-large;
+#artistaUno {
+  float: left;
+  width: 400px;
+  height: auto;
+  /*background: rgb(160, 83, 121);*/
 }
 
-.imagenes-galeria {
-  border-radius: 3%;
+#artistaDos {
+  float: left;
+  width: 400px;
+  height: auto;
+  /*background: rgb(182, 87, 87);*/
+}
+
+#artistaTres {
+  float: left;
+  width: 400px;
+  height: auto;
+  /*background: rgb(96, 126, 156);*/
 }
 
 
-  
-  
+
+footer {
+  padding: 6%;
+  background: rgb(202, 187, 187);
+}
