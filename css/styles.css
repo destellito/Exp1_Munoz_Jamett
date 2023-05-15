@@ -14,16 +14,14 @@ body {
   max-width: 100%;
 }
 
-#artistas {
-  top: 25%;
-  left: 30%;
-  padding: 5%;
+#artistasFila {
+  padding-bottom: 2%;
+  padding-top: 2%;
 }
 
-#artistasFila {
-  margin-left: -6%;
-  margin-right: -14%;
-
+#artistaContenido {
+  float: left;
+  padding-bottom: 2%;
 }
 
 #artistaUno, #artistaDos, #artistaTres {
@@ -34,22 +32,19 @@ body {
 }
 
 #artistaUno {
-  float: left;
-  width: 400px;
+  width: auto;
   height: auto;
   /*background: rgb(160, 83, 121);*/
 }
 
 #artistaDos {
-  float: left;
-  width: 400px;
+  width: auto;
   height: auto;
   /*background: rgb(182, 87, 87);*/
 }
 
 #artistaTres {
-  float: left;
-  width: 400px;
+  width: auto;
   height: auto;
   /*background: rgb(96, 126, 156);*/
 }
