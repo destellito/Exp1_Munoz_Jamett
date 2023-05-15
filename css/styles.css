@@ -21,8 +21,9 @@ body {
 }
 
 #artistasFila {
-  position: sticky;
-  transform: translateX(4.5%);
+  margin-left: -6%;
+  margin-right: -14%;
+
 }
 
 #artistaUno, #artistaDos, #artistaTres {
@@ -53,7 +54,38 @@ body {
   /*background: rgb(96, 126, 156);*/
 }
 
+#tituloGaleria {
+  text-align: center;
+}
 
+#contenidoGaleria {
+  text-align: center;
+}
+
+#cuadroGaleria {
+  float: left;
+  padding: 3%;
+}
+
+.imagenesGaleria {
+  border-radius: 5%;
+}
+
+#acordeonFAQ {
+  padding: 5%;
+}
+
+#tablaPrecios {
+  text-align: center;
+  font-size: x-large;
+}
+
+#infoAU {
+  float: left;
+  text-align: justify;
+  padding: 2%;
+
+}
 
 footer {
   padding: 6%;
