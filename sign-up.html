@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/logo/icono web.png">
+    <script src="js/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -43,66 +44,73 @@
                             <a class="nav-link" href="faq.html">FAQ</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="sign-up.html">Registrate</a>
-                      </li>
+                            <a class="nav-link" href="sign-up.html">Registrate</a>
+                        </li>
                         </ul>
                     </div>
                     </div>
                 </nav>
             </div>
         </div>
-        <!--CAFETERIA-->
-        <img src="img/imagenes galeria-sobre nosotros-faq/cafe.jpg" alt="Cafecito" width="100%">
+        <!--FORMULARIO DE PREREGISTRO-->
+        <div id="tituloRegistro" class="row">
+            <h1>¡Registrate desde hoy!</h1>
+            <p>¡Llena tus datos en el siguiente formulario para registrarte y obtener las últimas novedades de GrupoCero y estar listo/a la apertura del taller!</p>
+        </div>
         <div class="row">
-            <div id="tablaPrecios" class="container-fluid">
-                <h1 class="texto-cafe-menu">Cafetería</h1>
-                <hr>
-                <h2 class="texto-cafe-menu">Nuestra Carta</h2>
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th class="w-25" scope="col">Nombre</th>
-                        <th class="w-25" scope="col">Precio</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Capuccino</td>
-                        <td>$1200</td>
-                      </tr>
-                      <tr>
-                        <td>Té</td>
-                        <td>$1000</td>
-                      </tr>
-                      <tr>
-                        <td>Café Cortado</td>
-                        <td>$2500</td>
-                      </tr>
-                      <tr>
-                        <td>Café solo</td>
-                        <td>$1500</td>
-                      </tr>
-                      <tr>
-                        <td>Cheesecake</td>
-                        <td>$3000</td>
-                      </tr>
-                      <tr>
-                        <td>Queque</td>
-                        <td>$500</td>
-                      </tr>
-                      <tr>
-                        <td>Macarons</td>
-                        <td>$1000</td>
-                      </tr>
-                      <tr>
-                        <td>Mini Dona</td>
-                        <td>$300</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <div id="formulario" class="container-fluid">
+                <form action="" method="get">
+                    <div class="txt_field">
+                        <label for="nombres">Nombres:</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="ej. Juan Pedro">
+                    </div>
+                    <div class="txt_field">
+                        <label for="apellidoPaterno">Primer Apellido:</label>
+                        <input type="text" name="apellidoPaterno" id="apellidoPaterno" placeholder="ej. Pérez">
+                    </div>
+                    <div class="txt_field">
+                        <label for="apellidoMaterno">Segundo Apellido:</label>
+                        <input type="text" name="apellidoMaterno" id="apellidoMaterno" placeholder="ej. Rodriguez">
+                    </div>
+                    <div class="txt_field">
+                        <label for="rut">Rut (sin puntos y con guión):</label>
+                        <input type="text" name="rut" id="rut" placeholder="ej. 12345678-K">
+                    </div>
+                    <div class="txt_field">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" name="direccion" id="direccion" placeholder="ej. Calle Ejemplo 123">
+                    </div>
+                    <div class="txt_field">
+                        <label for="telefono">Número Telefónico:</label>
+                        <input type="text" name="telefono" id="telefono" placeholder="ej. 912345678">
+                    </div>
+                    <div class="txt_field">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" name="email" id="email" placeholder="ej. ejemplo@correo.cl">
+                    </div>
+                    <div class="select_field">
+                        <label for="genero">Género:</label>
+                        <select id="genero" name="genero">
+                        <option value="">Seleccionar</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                        </select>                        
+                    </div>
+                    <div class="sendAndResetBtn">
+                        <label for="enviar"></label>
+                        <input type="submit" name="enviar" id="enviar">
+                        <label for="limpiar"></label>
+                        <input type="reset" name="limpiar" id="limpiar">
+                    </div>     
+                </form>
+            </div>
+            <div id="botonesFormulario" class="container-fluid">
+                <input type="button" id="mostrarBtn" value="Mostrar Formulario"> 
+                <input type="button" id="ocultarBtn" value="Ocultar Formulario"> 
+                <script src="js/formulario.js"></script>
             </div>
         </div>
-
     </div>
     <!--footer-->
     <footer>
@@ -131,5 +139,6 @@
         </div>
         </div>
     </footer>
+
 </body>
 </html>
