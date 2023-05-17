@@ -11,8 +11,6 @@ $(document).ready(function() {
 });  
 
 document.getElementById("formulario").addEventListener("submit", function(event) {
-    event.preventDefault(); 
-
     var nombre = document.getElementById("nombre").value;
     var apellidoPaterno = document.getElementById("apellidoPaterno").value;
     var apellidoMaterno = document.getElementById("apellidoMaterno").value;
@@ -27,6 +25,5 @@ document.getElementById("formulario").addEventListener("submit", function(event)
     return;
     }
 
-    document.getElementById("formulario").submit();
-
+    alert("¡Registrado Correctamente!")    
 });
