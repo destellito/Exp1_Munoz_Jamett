@@ -133,6 +133,11 @@ form .txt_field {
   position: 50%;
 }
 
+#mapa {
+  width: 50%;
+  height: 400px;
+}
+
 footer {
   padding: 6%;
   color: aliceblue;
