@@ -27,6 +27,6 @@ document.getElementById("formulario").addEventListener("submit", function(event)
     return;
     }
 
-    document.getElementById("miFormulario").submit();
+    document.getElementById("formulario").submit();
 
 });
