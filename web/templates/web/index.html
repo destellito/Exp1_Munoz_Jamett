@@ -1,0 +1,83 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="row">
+    <div id="carrusel" class="container-fluid">
+        <div id="carouselRecientes" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselRecientes" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselRecientes" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselRecientes" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/example-art/1.png' %}" class="d-block w-100" alt="ex1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Un clásico</h5>
+                        <p>Eso es lo que es.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/example-art/2.png' %}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Y así...</h5>
+                        <p>Versos</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/example-art/1.png' %}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Facilisist</h5>
+                        <p>Mundo inundado.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecientes" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselRecientes" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!--IMÁGENES-->
+<div id="artistas" class="container-fluid">
+    <div id="artistasFila" class="row">
+        <div id="artistaContenido" class="col-md-4">
+            <div id="artistaUno" class="container-xl">
+                <h3>Siglo XXI</h3>
+                <p style="text-align: justify;">El arte contemporáneo abarca una amplia gama de formas y medios, desde pinturas y esculturas tradicionales hasta arte digital, 
+                instalaciones y arte conceptual. También se ha visto un mayor énfasis en la inclusión y la diversidad en el arte, 
+                lo que ha llevado a una mayor representación de artistas y obras de arte de diversas culturas y comunidades.
+                </p>
+                <img src="{% static 'img/example-art/ArtistasBackground3 (Custom).jpg' %}" alt="Loremna I." width="100%">
+            </div>
+        </div>
+        <div id="artistaContenido" class="col-md-4">
+            <div id="artistaDos" class="container-xl">
+                <h3>CHILE</h3>
+                <p style="text-align: justify;">Se ha visto un crecimiento en el uso de tecnologías digitales en el arte chileno, como videoarte, instalaciones multimedia y arte en línea. 
+                    Al mismo tiempo, ha habido un mayor interés en las prácticas de arte tradicionales, como la pintura y la escultura, 
+                    y la exploración de nuevas formas de expresión a través de estos medios.</p>
+                <img src="{% static 'img/example-art/ArtistasBackground (Custom).jpg' %}" alt="Veleari U." width="100%">
+            </div>
+        </div>
+        <div id="artistaContenido" class="col-md-4">
+            <div id="artistaTres" class="container-xl">
+                <h3>Chappuli Colure</h3>
+                <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Tristique senectus et netus et. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Vitae congue eu consequat ac felis donec et odio pellentesque. 
+                Dolor morbi non arcu risus quis varius quam.</p>
+                <img src="{% static 'img/example-art/ArtistasBackground2 (Custom).jpg' %}" alt="Chappuli C." width="100%">            
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

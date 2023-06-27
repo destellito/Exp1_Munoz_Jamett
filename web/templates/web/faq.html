@@ -1,0 +1,65 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!--CUADRO PREGUNTAS-->
+<h1 style="text-align: center;">Preguntas Frecuentes (FAQ)</h1>
+<hr>
+<div class="row">
+  <div id="acordeonFAQ" class="container" style="flex: center;">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            ¿Hasta qué hora está habilitado?
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">El taller está disponible para su visita desde las 11:00 hasta las 19:00.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            ¿Dónde están ubicados?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Nos puedes encontrar en Av. Pedro Aguirre Cerda 5001, Cerrillos. Cerca del museo aeronáutico nacional.
+            <div id="mapa">
+              <script src="{% static 'js/map-api.js' %}"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            No puedo comprar pinturas.
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">La función aun no está implentada. (¡Proximamente!)</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            ¿Alguna información de contacto?
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body"><p>
+            Whatsapp: +56982721215 <br>
+            <!--Profesor, este es el número de teléfono de uno de nosotros, no es inventado.-->
+            Correo: contacto@grupocero.cl
+          </p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+{% endblock %}
