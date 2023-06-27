@@ -46,6 +46,16 @@
                         </li>
                         {% if request.user.is_authenticated %}
                         <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sesión iniciada como {{ user.username | upper }}</a>
+                        </li>
+                        {% endif %}
+                        {% if request.user.is_authenticated and request.user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}" class="card-link">Panel de administración</a>
+                        </li>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Salir</a>
                         </li>
                         {% else %}
@@ -55,12 +65,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'register'%}">Registrarse</a>
                         </li>
-                        {% endif %}
-                        {% if request.user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sesión iniciada como {{ user.username | upper }}</a>
-                        </li>
-                        {% endif %}
+                        {% endif %}                        
                         </ul>
                     </div>
                     </div>
