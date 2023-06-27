@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'web/base.html' %}
 
 {% block content %}
 
@@ -15,7 +15,7 @@
         <div class="card-body">
           <h5 class="card-title">Ingrese sus Credenciales</h5>
           {{ form | crispy }}
-          <a href="{% url 'home' %}" class="card-link">Inicio</a>
+          <a href="{% url 'index' %}" class="card-link">Inicio</a>
           <a href="{% url 'register'%}" class="card-link">Registrarse</a>
 
           <button class="btn btn-sm btn-primary float-end" type="submit">Iniciar Sesion</button>

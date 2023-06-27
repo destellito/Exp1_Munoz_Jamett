@@ -4,6 +4,11 @@ body {
   overflow-x: hidden;
 }
 
+#sesion-msg {
+  text-align: right;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .carousel-item img {
   width: 100%;
   height: auto;

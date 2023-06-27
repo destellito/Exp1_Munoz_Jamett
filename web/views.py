@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login
 def index(request):
     return render(request, 'web/index.html')
 
+@login_required
 def gallery(request):
     return render(request, 'web/gallery.html')
 
@@ -29,5 +30,5 @@ def register(request):
             user_creation_form.save()
             user = authenticate(username=user_creation_form.cleaned_data['username'], password=user_creation_form.cleaned_data['password1'])
             login(request,user)
-            return redirect('home')
+            return redirect('index')
     return render(request, 'registration/register.html',data)

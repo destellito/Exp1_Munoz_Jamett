@@ -56,6 +56,11 @@
                             <a class="nav-link" href="{% url 'register'%}">Registrarse</a>
                         </li>
                         {% endif %}
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sesión iniciada como {{ user.username | upper }}</a>
+                        </li>
+                        {% endif %}
                         </ul>
                     </div>
                     </div>
