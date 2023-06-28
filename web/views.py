@@ -42,11 +42,10 @@ def agregar(request):
     return render(request, 'web/agregar.html')
 
 def agregarrec(request):
-    x=request.POST['idproducto']
-    y=request.POST['nombre']
-    z=request.POST['precio']
-    w=request.POST['imagen']
-    prod=Producto(idproducto=x,nombre=y,precio=z,imagen=w)
+    x=request.POST['nombre']
+    y=request.POST['precio']
+    z=request.POST['imagen']
+    prod=Producto(nombre=x,precio=y,imagen=z)
     prod.save()
     return redirect("/")
 
@@ -60,14 +59,12 @@ def actualizar(request, id):
     return render(request, 'web/actualizar.html', {'prod':prod})
 
 def actualizarrec(request, id):
-    x=request.POST['idproducto']
-    y=request.POST['nombre']
-    z=request.POST['precio']
-    w=request.POST['imagen']
+    x=request.POST['nombre']
+    y=request.POST['precio']
+    z=request.POST['imagen']
     prod=Producto.objects.get(id=id)
-    prod.idproducto=x
-    prod.nombre=y
-    prod.precio=z
-    prod.imagen=w
+    prod.nombre=x
+    prod.precio=y
+    prod.imagen=z
     prod.save()
     return redirect("/")
