@@ -4,24 +4,25 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container" style="text-align: center;">
 
     <h1>Editor de Productos</h1>
+    <hr>
     <br>
-    <table id="customers" border="1">
+    <table id="productos" border="1">
         <thead>
             <th>ID</th>
             <th>Nombre</th>
             <th>Precio</th>
             <th>Imagen</th>
-            <th colspan="2" id="mid">Action</th>
+            <th colspan="2" id="mid">Selección</th>
         </thead>
         {% for x in prod %}
         <tr>
             <td>{{x.id}}</td>
             <td>{{x.nombre}}</td>
             <td>{{x.precio}}</td>
-            <td>{{x.imagen}}</td>
+            <td><img src="{{ x.imagen.url }}" alt="Imagen del producto"></td>
             <td>
                 <a href="{% url 'actualizar' id=x.id %}"><button id="up">Actualizar</button></a>
             </td>

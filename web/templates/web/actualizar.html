@@ -4,18 +4,22 @@
 
 {% block content %}
 <div class="container2">
-    <h1>actualizar</h1>
-    <form action="{% url 'actualizarrec' prod.id %}" method="post">
-        {% csrf_token %}
-        <label for="">nombre</label><br><br>
-        <input type="text" name="nombre" value="{{prod.nombre}}"><br><br>
-        <label for="">precio</label><br><br>
-        <input type="number" name="precio" value="{{prod.precio}}"><br><br>
-        <label for="">imagen</label><br><br>
-        <input type="file" name="imagen" value="{{prod.imagen}}"><br><br>
-        <button type="submit" id="new1">Update</button>
-    </form>
-
+    <h1 style="text-align: center;">Actualizar</h1>
+    <br>
+    <hr>
+    <div style="text-align: center; padding: 3%;">
+        <form action="{% url 'actualizarrec' prod.id %}" method="post">
+            {% csrf_token %}
+            <label for=""><h3>Nombre</h3></label><br><br>
+            <input type="text" name="nombre" value="{{prod.nombre}}" style="border-radius: 6%;"><br><br>
+            <label for=""><h3>Precio</h3></label><br><br>
+            <input type="number" name="precio" value="{{prod.precio}}" style="border-radius: 6%;"><br><br>
+            <label for=""><h3>Imágen</h3></label><br><br>
+            <input type="file" name="imagen" value="{{prod.imagen}}" style="border-radius: 6%;"><br><br>
+            <button type="submit" id="new1" style="background-color: cornflowerblue; border-radius: 6%; color: blanchedalmond; width: 110px; height: 50px;">Actualizar</button>
+        </form>
+    
+    </div>
 </div>
 
 
