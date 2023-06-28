@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
+from .models import Producto
 
 def index(request):
     return render(request, 'web/index.html')
@@ -32,3 +33,41 @@ def register(request):
             login(request,user)
             return redirect('index')
     return render(request, 'registration/register.html',data)
+
+def product_list(request):
+    prod=Producto.objects.all()
+    return render(request, 'web/product_list.html',{'prod':prod})
+
+def agregar(request):
+    return render(request, 'web/agregar.html')
+
+def agregarrec(request):
+    x=request.POST['idproducto']
+    y=request.POST['nombre']
+    z=request.POST['precio']
+    w=request.POST['imagen']
+    prod=Producto(idproducto=x,nombre=y,precio=z,imagen=w)
+    prod.save()
+    return redirect("/")
+
+def eliminar(request,id):
+    prod=Producto.objects.get(id=id)
+    prod.delete()
+    return redirect("/")
+
+def actualizar(request, id):
+    prod=Producto.objects.get(id=id)
+    return render(request, 'actualizar.html', {'prod':prod})
+
+def actualizarrec(request, id):
+    x=request.POST['idproducto']
+    y=request.POST['nombre']
+    z=request.POST['precio']
+    w=request.POST['imagen']
+    prod=Producto.objects.get(id=id)
+    prod.idproducto=x
+    prod.nombre=y
+    prod.precio=z
+    prod.imagen=w
+    prod.save()
+    return redirect("/")

@@ -4,5 +4,33 @@
 
 {% block content %}
 
+<div class="container">
+    <h1>Editor de Productos</h1>
+    <br>
+    <button type="button">
+        <a href="{% url 'agregar' %}">Agregar</a>
+    </button>
+    <table>
+        {% if producto %}
+            <th>ID Producto</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Eliminar</th>
+            <th>Modificar</th>
+            {% for x in producto %}
+                <tr>
+                    <td>{{x.idproducto}}</td>
+                    <td>{{x.nombre}}</td>
+                    <td>{{x.precio}}</td>
+                    <td>{{x.imagen}}</td>
+                    <td><a href="{% url 'eliminar' pk=x.idproducto %}">Eliminar</a></td>
+                    <td><a href="{% url 'actualizar' pk=x.idproducto %}"></a></td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+
+</div>
 
 {% endblock %}
