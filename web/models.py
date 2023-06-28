@@ -4,10 +4,8 @@ from django.db import models
 
 # CLASS PRODUCTO!!
 
-
-
 class Producto(models.Model):
-	idproducto=models.AutoField(db_column='idProducto', primary_key=True) 
-    nombre=models.CharField(max_length=50)
-	precio=models.IntergerField()
-	imagen=models.ImageField(upload_to='productos/')    
+	idproducto=models.AutoField(db_column='idProducto', primary_key=True)
+	nombre=models.CharField(max_length=50)
+	precio=models.IntegerField()
+	imagen=models.ImageField(upload_to='productos/')
