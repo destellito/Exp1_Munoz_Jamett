@@ -57,7 +57,7 @@ def eliminar(request,id):
 
 def actualizar(request, id):
     prod=Producto.objects.get(id=id)
-    return render(request, 'actualizar.html', {'prod':prod})
+    return render(request, 'web/actualizar.html', {'prod':prod})
 
 def actualizarrec(request, id):
     x=request.POST['idproducto']
