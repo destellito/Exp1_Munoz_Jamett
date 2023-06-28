@@ -1,0 +1,22 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container2">
+    <h1>actualizar</h1>
+    <form action="{% url 'actualizarrec' prod.id %}" method="post">
+        {% csrf_token %}
+        <label for="">nombre</label><br><br>
+        <input type="text" name="nombre" value="{{prod.nombre}}"><br><br>
+        <label for="">precio</label><br><br>
+        <input type="number" name="precio" value="{{prod.precio}}"><br><br>
+        <label for="">imagen</label><br><br>
+        <input type="file" name="imagen" value="{{prod.imagen}}"><br><br>
+        <button type="submit" id="new1">Update</button>
+    </form>
+
+</div>
+
+
+{% endblock %}
