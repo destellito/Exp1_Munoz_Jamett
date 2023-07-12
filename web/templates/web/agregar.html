@@ -8,10 +8,13 @@
     <br>
     <hr>
     <div style="text-align: center; padding: 3%;">
-        <form action="{% url 'agregarrec' %}" method="post">
+        <form action="{% url 'agregarrec' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            {{ form.as_p }}
             <label for=""><h3>Nombre</h3></label><br><br>
             <input type="text" name="nombre" style="border-radius: 6%;"><br><br>
+            <label for=""><h3>Descripción</h3></label><br><br>
+            <input type="text" name="descripcion" style="border-radius: 6%;"><br><br>
             <label for=""><h3>Precio</h3></label><br><br>
             <input type="number" name="precio" style="border-radius: 6%;"><br><br>
             <label for=""><h3>Imagen</h3></label><br><br>

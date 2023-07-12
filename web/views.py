@@ -4,6 +4,7 @@ from django.contrib.auth import logout
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
 from .models import Producto
+from .forms import ProductoForm
 
 def index(request):
     return render(request, 'web/index.html')
@@ -42,17 +43,28 @@ def agregar(request):
     return render(request, 'web/agregar.html')
 
 def agregarrec(request):
-    x=request.POST['nombre']
-    y=request.POST['precio']
-    z=request.POST['imagen']
-    prod=Producto(nombre=x,precio=y,imagen=z)
-    prod.save()
-    return redirect("/")
+    if request.method == 'POST':
+        form = ProductoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(product_list)
+    else:
+        form = ProductoForm()
+    return render(request, 'nombre_de_tu_template.html', {'form': form})
+
+# def agregarrec(request):
+#     x=request.POST['nombre']
+#     w=request.POST['descripcion']
+#     y=request.POST['precio']
+#     z=request.POST['imagen']
+#     prod=Producto(nombre=x,precio=y,imagen=z,descripcion=w)
+#     prod.save()
+#     return redirect(product_list)
 
 def eliminar(request,id):
     prod=Producto.objects.get(id=id)
     prod.delete()
-    return redirect("/")
+    return redirect(product_list)
 
 def actualizar(request, id):
     prod=Producto.objects.get(id=id)
@@ -60,11 +72,13 @@ def actualizar(request, id):
 
 def actualizarrec(request, id):
     x=request.POST['nombre']
+    w=request.POST['descripcion']
     y=request.POST['precio']
     z=request.POST['imagen']
     prod=Producto.objects.get(id=id)
     prod.nombre=x
+    prod.descripcion=w
     prod.precio=y
     prod.imagen=z
     prod.save()
-    return redirect("/")
+    return redirect(product_list)

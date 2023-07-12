@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import index, register, gallery, cafe, aboutus, faq, product_list, agregar, agregarrec, eliminar, actualizar, actualizarrec
 urlpatterns = [
     path('', index, name='index'),
@@ -13,4 +15,4 @@ urlpatterns = [
     path('eliminar/<int:id>/', eliminar, name='eliminar'),
     path('actualizar/<int:id>/', actualizar, name='actualizar'),
     path('actualizar/actualizarrec/<int:id>/', actualizarrec, name='actualizarrec'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
