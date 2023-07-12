@@ -1,123 +1,27 @@
 {% extends 'web/base.html' %}
 {% load static %}
 
-
 {% block content %}
-
-<!--GALERIA-->
-<h1 id="tituloGaleria">Galería</h1>
-<hr>
-<!--fila1-->
-<div class="row">
-    <div id="contenidoGaleria" class="container-fluid">
-        <div id="filaGaleria" class="contariner-fluid">
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/Alseide.png' %}" alt="Loremna I." width="100%">  
-                <h3 class="textosGaleria">Alseide</h3>
-                <p class="textosGaleria">Loremna Ipusum</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/tonys.png' %}" alt="Veleari U." width="100%">
-                <h3 class="textosGaleria">Los Tonys</h3>
-                <p class="textosGaleria">Veleari Ule</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/The bun society.png' %}" alt="Chappuli C." width="100%">  
-                <h3 class="textosGaleria">La Sociedad Conejo</h3>
-                <p class="textosGaleria">Chappuli Colure</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
+    <h1 id="tituloGaleria">Galería</h1>
+    <hr>
+    <div class="row">
+        <div id="contenidoGaleria" class="container-fluid">
+            <div id="filaGaleria" class="contariner-fluid">
+                {% for producto in productos %}
+                    <div id="cuadroGaleria" class="col-md-4">
+                        <img class="imagenesGaleria" src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" width="400px" height="400px">
+                        <h3 class="textosGaleria">{{ producto.nombre }}</h3>
+                        <p class="textosGaleria">{{ producto.descripcion }}</p>
+                        <p class="textosGaleria">{{ producto.precio }}</p>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-outline-secondary" type="button">Ver Más</button>
+                            <button class="btn btn-outline-secondary" type="button">Comprar</button>
+                            <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-</div>
-<!--fila2-->
-<div class="row">
-    <div id="contenidoGaleria" class="container-fluid">
-        <div id="filaGaleria" class="contariner-fluid">
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/buho.png' %}" alt="Búho" width="100%">  
-                <h3 class="textosGaleria">Buho</h3>
-                <p class="textosGaleria">Piripo</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/selva.png' %}" alt="Veleari U." width="100%">
-                <h3 class="textosGaleria">Verde Infinito</h3>
-                <p class="textosGaleria">Gorico Holandes</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/patoplatano.png' %}" alt="Chappuli C." width="100%">  
-                <h3 class="textosGaleria">Una Criatura</h3>
-                <p class="textosGaleria">Loremna Ipusum</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--fila3-->
-<div class="row">
-    <div id="contenidoGaleria" class="container-fluid">
-        <div id="filaGaleria" class="contariner-fluid">
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/noche.png' %}" alt="Búho" width="100%">  
-                <h3 class="textosGaleria">Noche</h3>
-                <p class="textosGaleria">Gorico Holandes</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/pez.png' %}" alt="Veleari U." width="100%">
-                <h3 class="textosGaleria">Pezterio</h3>
-                <p class="textosGaleria">Veleari Uli</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-            <div id="cuadroGaleria" class="col-md-4">
-                <img class="imagenesGaleria" src="{% static 'img/imagenes galeria-sobre nosotros-faq/pez2.png' %}" alt="Chappuli C." width="100%">  
-                <h3 class="textosGaleria">Fisho</h3>
-                <p class="textosGaleria">Louni Nuli</p>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-outline-secondary" type="button">Ver Más</button>
-                    <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                    <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
-
+    <hr>
 {% endblock %}

@@ -11,7 +11,8 @@ def index(request):
 
 @login_required
 def gallery(request):
-    return render(request, 'web/gallery.html')
+    productos = Producto.objects.all()
+    return render(request, 'web/gallery.html', {'productos': productos})
 
 def cafe(request):
     return render(request, 'web/cafe.html')
