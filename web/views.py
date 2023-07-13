@@ -64,15 +64,18 @@ def actualizar(request, id):
     return render(request, 'web/actualizar.html', {'prod':prod})
 
 def actualizarrec(request, id):
-    x=request.POST['nombre']
-    w=request.POST['descripcion']
-    y=request.POST['precio']
-    z=request.POST['imagen']
-    prod=Producto.objects.get(id=id)
-    prod.nombre=x
-    prod.descripcion=w
-    prod.precio=y
-    prod.imagen=z
+    x = request.POST['nombre']
+    w = request.POST['descripcion']
+    y = request.POST['precio']
+    
+    prod = Producto.objects.get(id=id)
+    prod.nombre = x
+    prod.descripcion = w
+    prod.precio = y
+
+    if 'imagen' in request.FILES:
+        prod.imagen = request.FILES['imagen']
+
     prod.save()
     return redirect(product_list)
 
