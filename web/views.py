@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
-from .models import Producto
+from django.views import View
+from .models import Producto, Carrito, ItemCarrito
 from .forms import ProductoForm
 
 def index(request):
@@ -83,3 +84,69 @@ def actualizarrec(request, id):
     prod.imagen=z
     prod.save()
     return redirect(product_list)
+
+class GalleryView(View):
+    template_name = 'web/gallery.html'
+
+    def get(self, request):
+        productos = Producto.objects.all()
+        return render(request, self.template_name, {'productos': productos})
+
+    def post(self, request):
+        producto_id = request.POST.get('producto_id')
+        cantidad = int(request.POST.get('cantidad', 1))
+
+        if request.user.is_authenticated:
+            carrito, created = Carrito.objects.get_or_create(user=request.user)
+            producto = Producto.objects.get(id=producto_id)
+            item, created = ItemCarrito.objects.get_or_create(carrito=carrito, producto=producto)
+
+            item.cantidad += cantidad
+            item.save()
+
+        return redirect('gallery')
+
+@login_required
+def carrito(request):
+    try:
+        carrito = Carrito.objects.get(user=request.user)
+        items = ItemCarrito.objects.filter(carrito=carrito)
+        total = sum(item.producto.precio * item.cantidad for item in items)
+
+        return render(request, 'web/carrito.html', {'items': items, 'total': total})
+    except Carrito.DoesNotExist:
+        items = []
+        total = 0
+
+    return render(request, 'web/carrito.html', {'items': items, 'total': total})
+
+@login_required
+def eliminar_del_carrito(request, item_id):
+    # Eliminar el item del carrito
+    try:
+        item = ItemCarrito.objects.get(id=item_id)
+        item.delete()
+    except ItemCarrito.DoesNotExist:
+        pass
+
+    return redirect('carrito')
+
+@login_required
+def finalizar_compra(request):
+    try:
+        carrito = Carrito.objects.get(user=request.user)
+        items = ItemCarrito.objects.filter(carrito=carrito)
+        total = sum(item.producto.precio * item.cantidad for item in items)
+
+        if items.exists():
+            # Realizar acciones relacionadas con la finalización de la compra
+            # Por ejemplo, enviar una notificación al usuario o guardar los detalles de la compra en algún lugar
+
+            # Limpiar el carrito después de la compra
+            carrito.productos.clear()
+
+            return render(request, 'web/finalizar_compra.html')
+    except Carrito.DoesNotExist:
+        pass
+
+    return redirect('carrito')

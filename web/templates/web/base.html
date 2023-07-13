@@ -48,6 +48,11 @@
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Sesión iniciada como {{ user.username | upper }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'carrito' %}">
+                                Carrito ({% if request.user.is_authenticated %}{{ request.user.carrito.productos.count }}{% else %}0{% endif %})
+                            </a>
+                        </li>                        
                         {% endif %}
                         {% if request.user.is_authenticated and request.user.is_staff %}
                         <li class="nav-item">
