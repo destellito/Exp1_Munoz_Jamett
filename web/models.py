@@ -8,4 +8,4 @@ class Producto(models.Model):
 	nombre=models.CharField(max_length=50)
 	descripcion=models.CharField(max_length=250)
 	precio=models.IntegerField()
-	imagen=models.FileField(upload_to='')
+	imagen=models.ImageField(upload_to='')

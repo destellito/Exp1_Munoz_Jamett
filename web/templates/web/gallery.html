@@ -11,12 +11,12 @@
                     <div id="cuadroGaleria" class="col-md-4">
                         <img class="imagenesGaleria" src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" width="400px" height="400px">
                         <h3 class="textosGaleria">{{ producto.nombre }}</h3>
-                        <p class="textosGaleria">{{ producto.descripcion }}</p>
-                        <p class="textosGaleria">{{ producto.precio }}</p>
+                        <p class="textosGaleria">${{ producto.precio }}</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-outline-secondary" type="button">Ver Más</button>
+                            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#desc">Ver Más</button>
+                            <div id="desc" class="collapse">{{ producto.descripcion }}</div>
                             <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                            <button class="btn btn-outline-secondary" type="button">Añadir al carrito</button>
+                            <button class="btn btn-primary" type="button">Añadir al carrito</button>
                         </div>
                     </div>
                 {% endfor %}

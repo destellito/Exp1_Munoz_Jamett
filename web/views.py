@@ -51,7 +51,7 @@ def agregarrec(request):
             return redirect(product_list)
     else:
         form = ProductoForm()
-    return render(request, 'nombre_de_tu_template.html', {'form': form})
+    return render(request, '', {'form': form})
 
 # def agregarrec(request):
 #     x=request.POST['nombre']
