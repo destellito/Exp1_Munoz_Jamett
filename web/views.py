@@ -54,15 +54,6 @@ def agregarrec(request):
         form = ProductoForm()
     return render(request, '', {'form': form})
 
-# def agregarrec(request):
-#     x=request.POST['nombre']
-#     w=request.POST['descripcion']
-#     y=request.POST['precio']
-#     z=request.POST['imagen']
-#     prod=Producto(nombre=x,precio=y,imagen=z,descripcion=w)
-#     prod.save()
-#     return redirect(product_list)
-
 def eliminar(request,id):
     prod=Producto.objects.get(id=id)
     prod.delete()
