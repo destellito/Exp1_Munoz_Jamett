@@ -15,8 +15,13 @@
                         <div class="d-grid gap-2 col-6 mx-auto">
                             <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#desc{{ producto.id }}">Ver Más</button>
                             <div id="desc{{ producto.id }}" class="collapse">{{ producto.descripcion }}</div>
-                            <button class="btn btn-outline-secondary" type="button">Comprar</button>
-                            <button class="btn btn-primary" type="button">Añadir al carrito</button>
+                            <form method="post" action="{% url 'gallery' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="producto_id" value="{{ producto.id }}">
+                                <input type="number" name="cantidad" value="1" min="1">
+                                <button class="btn btn-primary" type="submit">Añadir al carrito</button>
+                            </form>                            
+                            
                         </div>
                     </div>
                 {% endfor %}
