@@ -21,7 +21,7 @@
                         <td>{{ item.cantidad }}</td>
                         <td>${{ item.producto.precio }}</td>
                         <td>
-                            <a href="{% url 'eliminar_del_carrito' item.id %}">Eliminar</a>
+                            <a href="{% url 'eliminar_del_carrito' item.id %}" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                 {% endfor %}
