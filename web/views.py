@@ -133,10 +133,9 @@ def finalizar_compra(request):
         total = sum(item.producto.precio * item.cantidad for item in items)
 
         if items.exists():
-            # Realizar acciones relacionadas con la finalización de la compra
-            # Por ejemplo, enviar una notificación al usuario o guardar los detalles de la compra en algún lugar
+            
+            #aca iria algo relacionado a webpay
 
-            # Limpiar el carrito después de la compra
             carrito.productos.clear()
 
             return render(request, 'web/finalizar_compra.html')
