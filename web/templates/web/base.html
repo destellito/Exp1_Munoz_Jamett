@@ -92,22 +92,22 @@
         <div class="row">
             <div class="col-md-4">
             <h4>GrupoCero</h4>
-            <p>@Copyright. Todos los derechos reservados 2023.</p>
+            <p>© 2023  | Todos los derechos reservados.</p>
             </div>
             <div class="col-md-4">
             <h4>Enlaces útiles</h4>
             <ul>
-                <li><a href="{% url 'faq' %}">FAQ</a></li> 
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="{% url 'faq' %}">Contacto</a></li>
+                <li style="margin-bottom: 5px;"><a href="{% url 'faq' %}" style="color: white; text-decoration: none;">FAQ</a></li> 
+                <li style="margin-bottom: 5px;"><a href="{% static 'pdf/terminos_y_condiciones.pdf' %}" style="color: white; text-decoration: none;" >Términos y Condiciones</a></li>
+                <li style="margin-bottom: 5px;"><a href="{% url 'faq' %}" style="color: white; text-decoration: none;">Contacto</a></li>
             </ul>
             </div>
             <div class="col-md-4">
-            <h4>Síguenos</h4>
+            <h4>Síguenos en nuestras Redes</h4>
             <ul>
-                <li><a href="#"><img src="{% static 'img/icons/facebook.png' %}" alt="facebook" width="5%" height="5%"></a></li>
-                <li><a href="#"><img src="{% static 'img/icons/instagram.png' %}" alt="instagram" width="5%" height="5%"></a></li>
-                <li><a href="#"><img src="{% static 'img/icons/whatsapp.png' %}" alt="whatsapp" width="5%" height="5%"></a></li>
+                <li style="margin-bottom: 10px;"><a href="https://facebook.com/" target="_blank"><img src="{% static 'img/icons2/facebook.png' %}" alt="facebook"></a></li> 
+                <li style="margin-bottom: 10px;"><a href="https://www.instagram.com/" target="_blank"><img src="{% static 'img/icons2/logotipo-de-instagram.png' %}" alt="instagram"></a></li>
+                <li style="margin-bottom: 10px;"><a href="https://web.whatsapp.com/" target="_blank"><img src="{% static 'img/icons2/whatsapp.png' %}" alt="whatsapp"></a></li>
             </ul>
             </div>
         </div>
