@@ -3,52 +3,65 @@
 
 
 {% block content %}
-
+<div>
 <img src="{% static 'img/imagenes galeria-sobre nosotros-faq/cafe.jpg' %}" alt="Cafecito" width="100%">
+</div>
+<span><br></span>
         <div class="row">
-            <div id="tablaPrecios" class="container-fluid">
-                <h1 class="texto-cafe-menu">Cafetería</h1>
+            <div class="container-fluid">
+                <h1 class="texto-cafe-menu" style="text-align: center;">Cafetería</h1>
                 <hr>
-                <h2 class="texto-cafe-menu">Nuestra Carta</h2>
-                <table class="table">
+                <h2 class="texto-cafe-menu" style="text-align: center;">Nuestra Carta</h2>
+                <hr>
+                <span><br></span>
+                <table class="table"  id="tablaPrecios">
                     <thead>
                       <tr>
-                        <th class="w-25" scope="col">Nombre</th>
-                        <th class="w-25" scope="col">Precio</th>
+                        <th class="w-40" scope="col">Nombre</th>
+                        <th class="w-40" scope="col">Precio</th>
+                        <th class="w-20" scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Capuccino</td>
                         <td>$1200</td>
+                        <td><img src="{% static 'img/cafe/cappuccino.png' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                       <tr>
                         <td>Té</td>
                         <td>$1000</td>
+                        <td><img src="{% static 'img/cafe/te.jpg' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                       <tr>
                         <td>Café Cortado</td>
                         <td>$2500</td>
+                        <td><img src="{% static 'img/cafe/cafecortado.jpg' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                       <tr>
                         <td>Café solo</td>
                         <td>$1500</td>
+                        <td><img src="{% static 'img/cafe/cafe.png' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                       <tr>
                         <td>Cheesecake</td>
                         <td>$3000</td>
+                        <td><img src="{% static 'img/cafe/cheesecake.jpg' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                       <tr>
                         <td>Queque</td>
                         <td>$500</td>
+                        <td><img src="{% static 'img/cafe/queque.jpg' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                       <tr>
                         <td>Macarons</td>
                         <td>$1000</td>
+                        <td><img src="{% static 'img/cafe/macarons.jpg' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                       <tr>
                         <td>Mini Dona</td>
                         <td>$300</td>
+                        <td><img src="{% static 'img/cafe/minidonut.jpg' %}" alt="" width="150px" height="100px"></td>
                       </tr>
                     </tbody>
                   </table>

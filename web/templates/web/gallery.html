@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <h1 id="tituloGaleria">Galería</h1>
+    <h1 id="tituloGaleria">G A L E R Í A</h1>
     <hr>
     <div class="row">
         <div id="contenidoGaleria" class="container-fluid">
@@ -10,6 +10,7 @@
                 {% for producto in productos %}
                     <div id="cuadroGaleria" class="col-md-4">
                         <img class="imagenesGaleria" src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" width="400px" height="400px">
+                        <br><span></span><br>
                         <h3 class="textosGaleria">{{ producto.nombre }}</h3>
                         <p class="textosGaleria">${{ producto.precio }}</p>
                         <div class="d-grid gap-2 col-6 mx-auto">
@@ -19,7 +20,8 @@
                                 {% csrf_token %}
                                 <input type="hidden" name="producto_id" value="{{ producto.id }}">
                                 <input type="number" name="cantidad" value="1" min="1">
-                                <button class="btn btn-primary" type="submit">Añadir al carrito</button>
+                                <br><span></span><br>
+                                <button class="btn btn-primary" type="submit" id="anadir_btn">Añadir al carrito</button>
                             </form>                            
                             
                         </div>

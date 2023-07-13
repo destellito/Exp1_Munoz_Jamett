@@ -78,6 +78,10 @@ body {
 
 #tablaPrecios {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
   font-size: x-large;
 }
 
@@ -147,6 +151,10 @@ form .txt_field {
 .enlace-personalizado {
   color: white; 
   font-size: 16px;
+}
+
+#carrito_estetica {
+  padding: 5%;
 }
 
 footer {

@@ -1,0 +1,18 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div style="padding: 25%;">
+    <span></span>
+    <H1 style="text-align: center;">¡GRACIAS POR TU COMPRA!</H1>
+    <span></span>
+    <script>
+        function redirect() {
+        window.location.href = "{% url 'gallery' %}";
+        }
+        setTimeout(redirect, 3000);
+    </script>
+</div>
+
+{% endblock %}
