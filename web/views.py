@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login
 from django.views import View
 from .models import Producto, Carrito, ItemCarrito
 from .forms import ProductoForm
+import mercadopago
 
 def index(request):
     return render(request, 'web/index.html')
@@ -133,8 +134,23 @@ def finalizar_compra(request):
         total = sum(item.producto.precio * item.cantidad for item in items)
 
         if items.exists():
-            
-            #aca iria algo relacionado a webpay
+
+            sdk = mercadopago.SDK("TEST-6383007846897635-052209-ff5cacd9dcc23954573f14cc46d9b32a-414895471")
+
+            payment_data = {
+                "transaction_amount": total,
+                "token": "4168818844447115",
+                "description": "Payment description",
+                "payment_method_id": 'visa',
+                "installments": 1,
+                "payer": {
+                    "email": 'test_user_123456@testuser.com'
+                }
+            }
+            result = sdk.payment().create(payment_data)
+            payment = result["response"]
+
+            print(payment)
 
             carrito.productos.clear()
 

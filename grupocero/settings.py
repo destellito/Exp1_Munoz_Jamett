@@ -132,9 +132,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # variables de entorno de login y logout
-LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 #archivos de medios
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MERCADOPAGO = {
+    'autoprocess': True,
+    'success_url': 'myapp:mp_success',
+    'failure_url': 'myapp:mp_failure',
+    'pending_url': 'myapp:mp_pending',
+    'base_host': '127.0.0.1:8000'
+}
