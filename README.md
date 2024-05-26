@@ -11,6 +11,8 @@ Valentina Jamett, Jorge Muñoz
     >abrir cmd o powershell como administrador
     python -m venv myvenv
     python -m pip install --upgrade pip
-    pip install –r requirements.txt
+## Instalar:
+    pip install Django==4.1.2
     pip install crispy-bootstrap5
     python -m pip install Pillow
+    pip install mercadopago
